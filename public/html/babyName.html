@@ -13,15 +13,18 @@
 
         <div>
             <form>
+
                    <h1>Make a Baby</h1><br>
                 <input class="checkmark" type="radio" ng-model="genderButt" value="Male" ng-click="isMale()" >Male
                 <input class="checkmark" type="radio" ng-model="genderButt" value="Female" ng-click="isFemale()" >Female
+
             </form>
         </div>
 
-        <button ng-click="getChild()">Give Me Child</button>
+        <button ng-click="computeChild()">Give Me Child</button>
         <div>
             {{name}}
+            {{fact}}
         </div>
     </div>
 

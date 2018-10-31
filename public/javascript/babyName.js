@@ -11,9 +11,11 @@ app.controller('myCtrl', function($scope, $http) {
         document.body.style.backgroundColor = "#FFB6C1";
     }
     $scope.getChild = function() {
+
         var url = "";
         if ($scope.genderButt === "Male") {
             url = '/getBoy';
+
 
             $http.get(url).then(function(response) {
                 console.log(response);
@@ -26,6 +28,8 @@ app.controller('myCtrl', function($scope, $http) {
 
 
         else if ($scope.genderButt === "Female") {
+
+  
             url = '/getGirl';
 
             $http.get(url).then(function(response) {
@@ -38,9 +42,15 @@ app.controller('myCtrl', function($scope, $http) {
             $scope.name = "Please choose a gender for your baby."
         }
 
+        
+     
 
-
-
+    }
+    
+    $scope.computeChild=function() {
+         $http.get('/funfact').then(function(response) {
+            debugger;
+        });
     }
 
 
