@@ -1,18 +1,22 @@
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
     $scope.name = "";
-
+    $scope.fact = "";
 
     $scope.isMale = function() {
         document.body.style.backgroundColor = "#89CFF0";
     }
-    
+
     $scope.isFemale = function() {
         document.body.style.backgroundColor = "#FFB6C1";
     }
+
+
     $scope.getChild = function() {
 
         var url = "";
+
+
         if ($scope.genderButt === "Male") {
             url = '/getBoy';
 
@@ -26,12 +30,9 @@ app.controller('myCtrl', function($scope, $http) {
 
 
 
-
         else if ($scope.genderButt === "Female") {
 
-  
             url = '/getGirl';
-
             $http.get(url).then(function(response) {
                 console.log(response);
                 $scope.name = response.data;
@@ -42,16 +43,19 @@ app.controller('myCtrl', function($scope, $http) {
             $scope.name = "Please choose a gender for your baby."
         }
 
-        
-     
+        $http.get('/funfact').then(function(response) {
+            $scope.fact = response.data;
+        });
+
+
 
     }
-    
-    $scope.computeChild=function() {
-         $http.get('/funfact').then(function(response) {
-            debugger;
-        });
-    }
+
+    // $scope.computeChild = function() {
+    //     $http.get('/funfact').then(function(response) {
+    //         debugger;
+    //     });
+    // }
 
 
 });
