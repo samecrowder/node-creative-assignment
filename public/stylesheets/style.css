@@ -1,69 +1,62 @@
 body {
+  background-color:#AAAAAA;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align:center;
 }
 
 a {
   color: #00B7FF;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+.container {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    opacity: .75;
+    color: black;
+    background-color: white;
+    text-align: center;
+    width: 65%;
+    height: 85%;
+    display: inline-block;
+    /*when this line is coupled with the parent having text-align:center, you can center the div easy*/
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+/* Create a custom radio button */
+.checkmark {
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
 }
 
-input:checked+.slider {
-  background-color: #2196F3;
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
 }
 
-input:focus+.slider {
-  box-shadow: 0 0 1px #2196F3;
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
 }
 
-input:checked+.slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+	border-radius: 50%;
+	background: white;
 }
 
-/* Rounded sliders */
 
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}

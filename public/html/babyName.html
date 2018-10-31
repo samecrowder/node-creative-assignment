@@ -9,13 +9,13 @@
 
 
 <body>
-    <div ng-app="myApp" ng-controller="myCtrl">
+    <div ng-app="myApp" ng-controller="myCtrl" class="container">
 
         <div>
             <form>
-                Pick a gender:
-                <input type="radio" ng-model="genderButt" value="Male">Male
-                <input type="radio" ng-model="genderButt" value="Female">Female
+                   <h1>Make a Baby</h1><br>
+                <input class="checkmark" type="radio" ng-model="genderButt" value="Male" ng-click="isMale()" >Male
+                <input class="checkmark" type="radio" ng-model="genderButt" value="Female" ng-click="isFemale()" >Female
             </form>
         </div>
 
