@@ -43,14 +43,6 @@ a {
 	background: white;
 }
 
-.disabled-button {
-    color: red;
-}
-
-.enabled-button {
-    color: green;
-}
-
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -84,4 +76,25 @@ a {
     font-size: 500%;
     margin: 1em;
     border-radius: 25px;
+}
+
+.make-baby {
+    width: 99%;
+    margin: 0.2em;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    font-size: 400%;
+}
+
+.form-inputs {
+    font-size: 200%;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+}
+
+.child-button {
+    width: 5em;
+    font-size: 150%;
 }
