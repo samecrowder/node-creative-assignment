@@ -2,6 +2,7 @@ var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
     $scope.name = "";
     $scope.fact = "";
+    $scope.genderButt = "";
     
     $scope.dateRegex = /^(0[1-9]||1[0-2])\/([0-2][0-9]|3[0-1])/;
 
@@ -14,7 +15,7 @@ app.controller('myCtrl', function($scope, $http) {
     }
     
     $scope.checkedBoxes = function() {
-        return false;
+         return $scope.genderButt == "Male" || $scope.genderButt == "Female";
     }
 
     $scope.getChild = function() {

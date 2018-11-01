@@ -17,7 +17,7 @@
                 <input class="checkmark" type="radio" ng-model="genderButt" value="Male" ng-click="isMale()" >Male
                 <input class="checkmark" type="radio" ng-model="genderButt" value="Female" ng-click="isFemale()" >Female<br>
                 Enter your child's (hypothetical) birthdate (MM/DD): <input ng-required="true" ng-pattern="dateRegex" type="text" name="dateText" ng-model="dateText"><br>
-                <input ng-class="{'disabled-button': babyForm.$invalid}" ng-disabled="babyForm.$invalid || !checkedBoxes" type="submit" value="Give Me Child">
+                <input ng-class="{'disabled-button': babyForm.$invalid}" ng-disabled="babyForm.$invalid || !checkedBoxes()" type="submit" value="Give Me Child">
             </form>
         </div>
         <div>
