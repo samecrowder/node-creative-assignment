@@ -4,20 +4,24 @@ app.controller('myCtrl', function($scope, $http) {
     $scope.fact = "";
     $scope.genderButt = "";
 
+
     $scope.birth = { data: {} };
     $scope.death = { data: {} };
     $scope.event = { data: {} };
+
 
     $scope.dateRegex = /^(0[1-9]||1[0-2])\/([0-2][0-9]|3[0-1])/;
 
     $scope.isMale = function() {
         document.body.style.backgroundColor = "#89CFF0";
-        //document.getElementsByClassName("data-container").style.backgroundColor = "#89CFF0";
+        document.getElementsByClassName("data-container").style.backgroundColor = "#89CFF0";
+        $scope.color_class = 'male-color';
     }
 
     $scope.isFemale = function() {
         document.body.style.backgroundColor = "#FFB6C1";
-        //document.getElementsByClassName("data-container").style.backgroundColor = "#FFB6C1";
+        document.getElementsByClassName("data-container").style.backgroundColor = "#FFB6C1";
+        $scope.color_class = 'female-color';
     }
 
     $scope.checkedBoxes = function() {
@@ -25,7 +29,9 @@ app.controller('myCtrl', function($scope, $http) {
     }
 
     $scope.getChild = function() {
+
         document.getElementById('responseSpace').style.opacity = "0";
+
         var url = "";
         if ($scope.genderButt === "Male") {
             url = '/getBoy';
@@ -73,6 +79,7 @@ app.controller('myCtrl', function($scope, $http) {
                     
                         <div class="row">
                             <h1 class="name-container">
+
                                 ${$scope.name}
                             </h1>
                         </div>
@@ -82,6 +89,7 @@ app.controller('myCtrl', function($scope, $http) {
                                On This Date...
                             </h3>
                         </div>
+
                         
                         <div class="flex-row">
                         
@@ -89,24 +97,29 @@ app.controller('myCtrl', function($scope, $http) {
                                 <div class="data-container-title">
                                     Birth Fact:
                                 </div>
+
                                 <div class="data-container-value">
-                                    In the year ${$scope.birth.year}, ${$scope.birth.text}
+                                    In the year ${$scope.birth.year}, ${$scope.birth.text} was born.
                                 </div>
                             </div>
+
                             
                             <div class="data-container">
                                 <div class="data-container-title">
                                     Death Fact:
                                 </div>
+
                                 <div class="data-container-value">
-                                    In the year ${$scope.death.year}, ${$scope.death.text}
+                                    In the year ${$scope.death.year}, ${$scope.death.text} died.
                                 </div>
                             </div>
+
                             
                             <div class="data-container">
                                 <div class="data-container-title">
                                     Event Fact:
                                 </div>
+
                                 <div class="data-container-value">
                                     In the year ${$scope.event.year}, ${$scope.event.text}
                                 </div>

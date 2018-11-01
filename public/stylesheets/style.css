@@ -21,7 +21,7 @@ a {
     background-color: white;
     text-align: center;
     padding: 0.2em 0 0.2em 0;
-    margin: 3em;
+    margin: 1em;
 }
 
 /* Create a custom radio button */
@@ -54,6 +54,7 @@ a {
     background: white;
 }
 
+
 .disabled-button {
     background-color: #df2020;
 }
@@ -67,6 +68,7 @@ a {
     font-size: 36;
     font-family: times;
 }
+
 
 .flex-row {
     display: flex;

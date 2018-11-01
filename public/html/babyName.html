@@ -14,11 +14,13 @@
 
         <div class="container">
             <form ng-submit="getChild()" ng-model="babyForm" name="babyForm">
+
                 <h1 id="title">Wanna Make a Baby?</h1><br>
                 <input class="checkmark" type="radio" ng-model="genderButt" value="Male" ng-click="isMale()" >Male
                 <input class="checkmark" type="radio" ng-model="genderButt" value="Female" ng-click="isFemale()" >Female<br>
                 Enter your child's (hypothetical) birth date: <input placeholder="mm/dd" ng-required="true" ng-pattern="dateRegex" type="text" name="dateText" ng-model="dateText"><br>
                 <input ng-class="{'disabled-button': babyForm.$invalid || !checkedBoxes(), 'enabled-button': !babyForm.$invalid && checkedBoxes()}" ng-disabled="babyForm.$invalid || !checkedBoxes()" type="submit" value="Give Me Child">
+
             </form>
         </div>
     </div>
