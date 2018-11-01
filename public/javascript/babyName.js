@@ -12,12 +12,12 @@ app.controller('myCtrl', function($scope, $http) {
 
     $scope.isMale = function() {
         document.body.style.backgroundColor = "#89CFF0";
-        document.getElementsByClassName("data-container").style.backgroundColor = "#89CFF0";
+        //document.getElementsByClassName("data-container").style.backgroundColor = "#89CFF0";
     }
 
     $scope.isFemale = function() {
         document.body.style.backgroundColor = "#FFB6C1";
-        document.getElementsByClassName("data-container").style.backgroundColor = "#FFB6C1";
+        //document.getElementsByClassName("data-container").style.backgroundColor = "#FFB6C1";
     }
     
     $scope.checkedBoxes = function() {
@@ -50,7 +50,7 @@ app.controller('myCtrl', function($scope, $http) {
         var url = '/funFact/' + dateSplit[0] + '/' + dateSplit[1];
         $http.get(url).then(function(response) {
             $scope.fact = response.data;
-
+            console.log($scope.fact);
             $scope.birth = $scope.fact.data.Births[0];
             $scope.death = $scope.fact.data.Deaths[0];
             $scope.event = $scope.fact.data.Events[0];
