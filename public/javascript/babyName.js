@@ -4,6 +4,10 @@ app.controller('myCtrl', function($scope, $http) {
     $scope.fact = "";
     $scope.genderButt = "";
     
+    $scope.birth = {data: {}};
+    $scope.death = {data: {}};
+    $scope.event = {data: {}};
+    
     $scope.dateRegex = /^(0[1-9]||1[0-2])\/([0-2][0-9]|3[0-1])/;
 
     $scope.isMale = function() {
@@ -42,25 +46,32 @@ app.controller('myCtrl', function($scope, $http) {
 
         var dateSplit = $scope.dateText.split('/');
         var url = '/funFact/' + dateSplit[0] + '/' + dateSplit[1];
-        debugger;
         $http.get(url).then(function(response) {
             $scope.fact = response.data;
 
             $scope.birth = $scope.fact.data.Births[0];
             $scope.death = $scope.fact.data.Deaths[0];
             $scope.event = $scope.fact.data.Events[0];
+            
+            var responseSpace = document.getElementById('responseSpace');
+            responseSpace.innerHTML = "";
+            var response = getResponseHtml();
+            responseSpace.innerHTML = response;
+            
+            function getResponseHtml() {
+                var resp =  `
+                    <div>
+                        ${$scope.name}<br>
+                        Did you know that on your child's birthday:<br>
+                        <ul>
+                            <li>In the year ${$scope.birth.year}, ${$scope.birth.text} was born.</li>
+                            <li>In the year ${$scope.death.year}, ${$scope.death.text} was born.</li>
+                            <li>In the year ${$scope.event.year}, ${$scope.event.text}</li>
+                        </ul>
+                    </div>
+                `;
+                return resp;
+            }
         });
-        
-        var responseSpace = document.getElementById("responseSpace");
-        var response = angular.element('<div>Hello World</div>');
-        responseSpace.append(response);
-        
-        // {{name}}<br>
-        // Did you know that on your child's birthday:<br>
-        // <ul>
-        //     <li>In the year {{birth.year}}, {{birth.text}} was born.</li>
-        //     <li>In the year {{death.year}}, {{death.text}} was born.</li>
-        //     <li>In the year {{event.year}}, {{event.text}}</li>
-        // </ul>
     }
 });
