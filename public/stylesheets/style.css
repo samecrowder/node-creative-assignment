@@ -59,4 +59,10 @@ a {
 	background: white;
 }
 
+.disabled-button {
+    color: red;
+}
 
+.enabled-button {
+    color: green;
+}
