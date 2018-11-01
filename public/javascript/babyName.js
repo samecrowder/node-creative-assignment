@@ -12,10 +12,12 @@ app.controller('myCtrl', function($scope, $http) {
 
     $scope.isMale = function() {
         document.body.style.backgroundColor = "#89CFF0";
+        document.getElementsByClassName("data-container").style.backgroundColor = "#89CFF0";
     }
 
     $scope.isFemale = function() {
         document.body.style.backgroundColor = "#FFB6C1";
+        document.getElementsByClassName("data-container").style.backgroundColor = "#FFB6C1";
     }
     
     $scope.checkedBoxes = function() {
@@ -66,15 +68,30 @@ app.controller('myCtrl', function($scope, $http) {
                                 ${$scope.name}
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm data-container">
-                                In the year ${$scope.birth.year}, ${$scope.birth.text} was born.
+                        <div class="flex-row">
+                            <div class="data-container">
+                                <div class="data-container-title>
+                                    Birth Fact:
+                                </div>
+                                <div class="data-container-value">
+                                    In the year ${$scope.birth.year}, ${$scope.birth.text}
+                                </div>
                             </div>
-                            <div class="col-sm data-container">
-                                In the year ${$scope.death.year}, ${$scope.death.text} was born.
+                            <div class="data-container">
+                                <div class="data-container-title>
+                                    Death Fact:
+                                </div>
+                                <div class="data-container-value">
+                                    In the year ${$scope.death.year}, ${$scope.death.text}
+                                </div>
                             </div>
-                            <div class="col-sm data-container">
-                                In the year ${$scope.event.year}, ${$scope.event.text}
+                            <div class="data-container">
+                                <div class="data-container-title>
+                                    Event Fact:
+                                </div>
+                                <div class="data-container-value">
+                                    In the year ${$scope.event.year}, ${$scope.event.text}
+                                </div>
                             </div>
                         </div>
                     </div>

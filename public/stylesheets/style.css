@@ -54,3 +54,15 @@ a {
 .name-container {
     color: red;
 }
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.data-container {
+    width: 33%;
+    word-wrap: break-word;
+    font-size: 150%;
+    border-radius: 25px;
+}
