@@ -72,14 +72,14 @@ app.controller('myCtrl', function($scope, $http) {
             
             function getResponseHtml() {
                 var resp =  `
-                    <div class="container response">
+                    <div class="container response text-center">
                         <div class="row">
                             <div class="name-container ${$scope.color_class}">
                                 ${$scope.name}
                             </div>
                         </div>
                         <div class="row fun-fact-title ${$scope.color_class}">
-                            Historic Event on Your Child's Birthdate
+                            Historic Events on Your Child's Birthdate
                         </div>
                         <div class="flex-row">
                             <div class="data-container ${$scope.color_class}">
