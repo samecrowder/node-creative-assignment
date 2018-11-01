@@ -22,6 +22,7 @@ router.get('/getBoy', function(req, res, next) {
 
 /*GET Girl NAME*/
 router.get('/getGirl', function(req, res, next) {
+  console.log("IN GET GIRL")
     var fs = require('fs');
     fs.readFile(__dirname + '/female_first.txt', function(err, data) {
         if (err) throw err;
@@ -32,20 +33,21 @@ router.get('/getGirl', function(req, res, next) {
     });
 });
 
-router.get('/funFact', function(req, res, next) {
-    var req = http.get('http://history.muffinlabs.com/date/12/14', function(result) {
-      var bodyChunks = [];
-      result.on('data', function(chunk) {
-        bodyChunks.push(chunk);
-      }).on('end', function() {
-        var body = Buffer.concat(bodyChunks);
-        res.send(body);
-      })
-    });
-    
-    req.on('error', function(e) {
-      console.log('ERROR: ' + e.message);
-    });
+router.get('/funFact/:month/:day', function(req, res, next) {
+  var url = 'http://history.muffinlabs.com/date/' + req.params.month + '/' + req.params.day;
+  var req = http.get(url, function(result) {
+    var bodyChunks = [];
+    result.on('data', function(chunk) {
+      bodyChunks.push(chunk);
+    }).on('end', function() {
+      var body = Buffer.concat(bodyChunks);
+      res.send(body);
+    })
+  });
+  
+  req.on('error', function(e) {
+    console.log('ERROR: ' + e.message);
+  });
 });
 
 module.exports = router;
