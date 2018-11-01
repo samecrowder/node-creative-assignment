@@ -16,7 +16,6 @@ app.controller('myCtrl', function($scope, $http) {
 
         var url = "";
 
-
         if ($scope.genderButt === "Male") {
             url = '/getBoy';
 
@@ -27,8 +26,6 @@ app.controller('myCtrl', function($scope, $http) {
             });
 
         }
-
-
 
         else if ($scope.genderButt === "Female") {
 
@@ -46,9 +43,6 @@ app.controller('myCtrl', function($scope, $http) {
         $http.get('/funfact').then(function(response) {
             $scope.fact = response.data;
         });
-
-
-
     }
 
     // $scope.computeChild = function() {
