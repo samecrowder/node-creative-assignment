@@ -10,17 +10,13 @@ a {
 }
 
 .container {
-    margin-top: 20px;
-    margin-bottom: 15px;
     border-radius: 25px;
     opacity: .9;
     color: black;
     background-color: white;
     text-align: center;
-    width: 65%;
-    height: 85%;
-    display: inline-block;
-    /*when this line is coupled with the parent having text-align:center, you can center the div easy*/
+    padding: 0.2em 0 0.2em 0;
+    margin: 3em;
 }
 
 /* Create a custom radio button */
@@ -65,4 +61,8 @@ a {
 
 .enabled-button {
     color: green;
+}
+
+.name-container {
+    color: red;
 }

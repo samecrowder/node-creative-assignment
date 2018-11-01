@@ -62,14 +62,21 @@ app.controller('myCtrl', function($scope, $http) {
                 var resp =  `
                     <div class="container response">
                         <div class="row">
-                            ${$scope.name}<br>
+                            <div class="name-container">
+                                ${$scope.name}
+                            </div>
                         </div>
-                        Did you know that on your child's birthday:<br>
-                        <ul>
-                            <li>In the year ${$scope.birth.year}, ${$scope.birth.text} was born.</li>
-                            <li>In the year ${$scope.death.year}, ${$scope.death.text} was born.</li>
-                            <li>In the year ${$scope.event.year}, ${$scope.event.text}</li>
-                        </ul>
+                        <div class="row">
+                            <div class="col-sm data-container">
+                                In the year ${$scope.birth.year}, ${$scope.birth.text} was born.
+                            </div>
+                            <div class="col-sm data-container">
+                                In the year ${$scope.death.year}, ${$scope.death.text} was born.
+                            </div>
+                            <div class="col-sm data-container">
+                                In the year ${$scope.event.year}, ${$scope.event.text}
+                            </div>
+                        </div>
                     </div>
                 `;
                 return resp;
