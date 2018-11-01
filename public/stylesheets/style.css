@@ -1,17 +1,22 @@
 body {
-  background-color:#AAAAAA;
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  text-align:center;
+    background-color: #AAAAAA;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+#title {
+    color: #111111;
+    font-size: 36px;
+    font-family: times;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
 }
 
 .container {
     border-radius: 25px;
-    opacity: .9;
     color: black;
     background-color: white;
     text-align: center;
@@ -20,39 +25,47 @@ a {
 }
 
 /* Create a custom radio button */
+
 .checkmark {
     height: 25px;
     width: 25px;
     background-color: #eee;
     border-radius: 50%;
+    margin-bottom: 25px;
 }
 
+
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+
+.container:hover input~.checkmark {
     background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
+
+.container input:checked~.checkmark {
     background-color: #2196F3;
 }
 
 /* Style the indicator (dot/circle) */
+
 .container .checkmark:after {
-	border-radius: 50%;
-	background: white;
+    border-radius: 50%;
+    background: white;
 }
 
 .disabled-button {
-    color: red;
+    background-color: #df2020;
 }
 
 .enabled-button {
-    color: green;
+    background-color: #19b319;
 }
 
 .name-container {
-    color: red;
+    color: #111111;
+    font-size: 36;
+    font-family: times;
 }
 
 .flex-row {
@@ -64,5 +77,44 @@ a {
     width: 33%;
     word-wrap: break-word;
     font-size: 150%;
+    margin:15px;
+    font-family: times;
     border-radius: 25px;
+}
+
+.data-container-title {
+    font-size: 28px;
+    margin-bottom:5px;
+    font-family: arial;
+}
+
+#responseSpace {
+    opacity: 0;
+    transition: opacity .75s;
+}
+
+input[type=submit] {
+    color: white;
+    width: 25%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+h3 {
+    font-size: 24px;
+    color: #111111;
+    font-family: times;
 }
