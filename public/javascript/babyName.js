@@ -60,8 +60,10 @@ app.controller('myCtrl', function($scope, $http) {
             
             function getResponseHtml() {
                 var resp =  `
-                    <div>
-                        ${$scope.name}<br>
+                    <div class="container response">
+                        <div class="row">
+                            ${$scope.name}<br>
+                        </div>
                         Did you know that on your child's birthday:<br>
                         <ul>
                             <li>In the year ${$scope.birth.year}, ${$scope.birth.text} was born.</li>
